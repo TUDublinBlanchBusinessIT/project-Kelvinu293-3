@@ -1,7 +1,11 @@
-<FORM method="POST" action="/cars/create"> 
+@if(session('success'))
+    <div style="color: green">{{ session('success') }}</div>
+@endif
+
+<form method="POST" action="{{ route('cars.create') }}">
     @csrf
-    Enter car make: <input type="text" name="make"><br>
-    Enter car model: <input type="text" name="model"><br>
-    Enter year: <input type="number" name="year"><br>
-    <input type="submit">
-</FORM>
+    Car Make: <input type="text" name="make"><br><br>
+    Car Model: <input type="text" name="model"><br><br>
+    Year: <input type="number" name="year"><br><br>
+    <input type="submit" value="Save Car">
+</form>
