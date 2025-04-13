@@ -27,5 +27,25 @@ class CarController extends Controller
     {
         return view('cars.new');
     }
+    
+    public function edit($id){
+        $car = \App\Models\Car::find($id);
+        return view('cars.edit')->with('car', $car);
+    }
+
+    public function update(Request $request)
+    {
+        $car = \App\Models\Car::find($request->id);
+        $car->setMake($request->make);
+        $car->setModel($request->model);
+        $car->setYear($request->year);
+        $car->save();
+
+        return redirect('/cars')->with('success', 'Car updated successfully!');
+    }
+    
+   
 }
+
+
 ?>

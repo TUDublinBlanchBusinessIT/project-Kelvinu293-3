@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/cars/new', 'App\Http\Controllers\CarController@new');
 Route::post('/cars/create', 'App\Http\Controllers\CarController@create')->name('cars.create');
 
+use App\Http\Controllers\CarController;
+
+Route::get('/cars/edit/{id}', [CarController::class, 'edit']);
+Route::post('/cars/update', [CarController::class, 'update']);
