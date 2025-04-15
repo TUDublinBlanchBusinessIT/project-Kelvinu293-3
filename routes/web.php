@@ -26,4 +26,5 @@ Route::get('/cars/edit/{id}', [CarController::class, 'edit']);
 Route::post('/cars/update', [CarController::class, 'update']);
 
 use App\Http\Controllers\CarCalendarController;
+
 Route::get('/cars/calendar', [CarCalendarController::class, 'display'])->name('cars.calendar');
