@@ -44,6 +44,12 @@ class CarController extends Controller
         return redirect('/cars')->with('success', 'Car updated successfully!');
     }
     
+    public function displayGrid(Request $request)
+    {
+        $cars = \App\Models\Car::all();
+        return view('cars.displaygrid')->with('cars', $cars);    
+    }
+    
    
 }
 
