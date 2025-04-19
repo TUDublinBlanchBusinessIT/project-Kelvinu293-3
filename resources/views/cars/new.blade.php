@@ -48,6 +48,11 @@
             <input type="number" class="form-control" id="year" name="year" required>
         </div>
 
+        <div class="mb-3">
+            <label for="type" class="form-label">Fuel Type</label>
+            <input type="number" class="form-control" id="type" name="type" required>
+        </div>
+
         <button type="submit" class="btn btn-primary">Save Car</button>
     </form>
 </div>
