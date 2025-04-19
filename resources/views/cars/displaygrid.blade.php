@@ -26,7 +26,7 @@
                     <img style="width:65%; height:200px;" class="mx-auto d-block" src="{{ asset('img/audi.jpg') }}" alt="Audi A1">
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success mx-auto d-block">Add to Basket</button>
+                    <button class="btn btn-success mx-auto d-block">Make Enquiry</button>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                     <img style="width:65%; height:200px;" class="mx-auto d-block" src="{{ asset('img/bmw.jpg') }}" alt="BMW X5">
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success mx-auto d-block">Add to Basket</button>
+                    <button class="btn btn-success mx-auto d-block">Make Enquiry</button>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
                     <img style="width:65%; height:200px;" class="mx-auto d-block" src="{{ asset('img/honda.jpg') }}" alt="Honda Civic">
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success mx-auto d-block">Add to Basket</button>
+                    <button class="btn btn-success mx-auto d-block">Make Enquiry</button>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                     <img style="width:65%; height:200px;" class="mx-auto d-block" src="{{ asset('img/hyundai.jpg') }}" alt="Hyundai i20">
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success mx-auto d-block">Add to Basket</button>
+                    <button class="btn btn-success mx-auto d-block">Make Enquiry</button>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
                     <img style="width:65%; height:200px;" class="mx-auto d-block" src="{{ asset('img/toyota.jpg') }}" alt="Toyota Aygo X">
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success mx-auto d-block">Add to Basket</button>
+                    <button class="btn btn-success mx-auto d-block">Make Enquiry</button>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
                     <img style="width:65%; height:200px;" class="mx-auto d-block" src="{{ asset('img/volkswagen.jpg') }}" alt="VW Golf">
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success mx-auto d-block">Add to Basket</button>
+                    <button class="btn btn-success mx-auto d-block">Make Enquiry</button>
                 </div>
             </div>
         </div>
