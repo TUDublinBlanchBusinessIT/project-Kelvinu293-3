@@ -53,6 +53,11 @@
             <input type="number" class="form-control" id="type" name="type" required>
         </div>
 
+        <div class="mb-3">
+            <label for="transmission" class="form-label">Transmission</label>
+            <input type="text" class="form-control" id="transmission" name="transmission" required>
+        </div>
+
         <button type="submit" class="btn btn-primary">Save Car</button>
     </form>
 </div>
