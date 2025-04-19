@@ -58,6 +58,11 @@
             <input type="text" class="form-control" id="transmission" name="transmission" required>
         </div>
 
+        <div class="mb-3">
+            <label for="colour" class="form-label">Colour</label>
+            <input type="text" class="form-control" id="colour" name="colour" required>
+        </div>
+
         <button type="submit" class="btn btn-primary">Save Car</button>
     </form>
 </div>
