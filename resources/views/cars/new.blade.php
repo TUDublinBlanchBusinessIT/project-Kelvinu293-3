@@ -15,7 +15,7 @@
           <a class="nav-link" href="/cars/new">Add Car</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/cars">View Cars</a>
+          <a class="nav-link" href="http://localhost:8000/cars/displaygrid">View Cars</a>
         </li>
       </ul>
     </div>
