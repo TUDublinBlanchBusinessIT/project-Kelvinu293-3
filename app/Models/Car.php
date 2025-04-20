@@ -21,5 +21,22 @@ class Car extends Model
     { 
         $this->attributes['year'] = $year; 
     } 
+
+    public function setType($type) 
+    { 
+        $this->attributes['type'] = $type; 
+    } 
+
+    public function setTransmission($transmission) 
+    { 
+        $this->attributes['transmission'] = $transmission; 
+    } 
+    
+    public function setColour($colour) 
+    { 
+        $this->attributes['colour'] = $colour; 
+    } 
+
+
 }
 ?>
