@@ -58,7 +58,7 @@
             <input type="text" class="form-control" id="transmission" name="transmission" required>
         </div>
 
-        <div class="mb-3">
+         <div class="mb-3">
             <label for="colour" class="form-label">Colour</label>
             <input type="text" class="form-control" id="colour" name="colour" required>
         </div>

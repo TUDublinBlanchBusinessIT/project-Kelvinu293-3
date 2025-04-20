@@ -16,6 +16,9 @@ class CarController extends Controller
         $car->setMake($request->make);
         $car->setModel($request->model);
         $car->setYear($request->year);
+        $car->setType($request->type);
+        $car->setTransmission($request->transmission);
+        $car->setColour($request->colour);
 
         // Save to the database
         $car->save();
@@ -39,6 +42,9 @@ class CarController extends Controller
         $car->setMake($request->make);
         $car->setModel($request->model);
         $car->setYear($request->year);
+        $car->setType($request->type);
+        $car->setTransmission($request->transmission);
+        $car->setColour($request->colour);
         $car->save();
 
         return redirect('/cars')->with('success', 'Car updated successfully!');
