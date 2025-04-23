@@ -82,8 +82,7 @@
             <td>{{ $car->transmission }}</td>
             <td>{{ $car->colour }}</td>
             <td>
-                {{-- <a href="{{ route('cars.edit', $car->id) }}">Edit</a> --}}
-
+                <a href="{{ route('cars.edit', $car->id) }}" class="btn btn-sm btn-warning">Edit</a>
                 <form action="{{ route('cars.destroy', $car->id) }}" method="POST" style="display:inline;">
                     @csrf
                     @method('DELETE')
