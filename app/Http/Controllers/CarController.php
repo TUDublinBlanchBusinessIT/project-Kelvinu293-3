@@ -28,7 +28,8 @@ class CarController extends Controller
 
     public function new()
     {
-        return view('cars.new');
+        $cars = Car::all();
+        return view('cars.new', compact('cars'));
     }
     
     public function edit($id){
