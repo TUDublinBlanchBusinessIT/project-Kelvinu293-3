@@ -65,6 +65,35 @@
 
         <button type="submit" class="btn btn-primary">Save Car</button>
     </form>
+
+    <table class="table">
+     <thead>
+        <tr>
+            <th>Make</th><th>Model</th><th>Year</th><th>Type</th><th>Transmission</th><th>Colour</th><th>Actions</th>
+        </tr>
+     </thead>
+     <tbody>
+        @foreach ($cars as $car)
+        <tr>
+            <td>{{ $car->make }}</td>
+            <td>{{ $car->model }}</td>
+            <td>{{ $car->year }}</td>
+            <td>{{ $car->type }}</td>
+            <td>{{ $car->transmission }}</td>
+            <td>{{ $car->colour }}</td>
+            <td>
+                {{-- <a href="{{ route('cars.edit', $car->id) }}">Edit</a> --}}
+
+                <form action="{{ route('cars.destroy', $car->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+     </tbody>
+    </table>
 </div>
 
 </body>

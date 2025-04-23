@@ -21,9 +21,11 @@ Route::get('/cars/new', 'App\Http\Controllers\CarController@new');
 Route::post('/cars/create', 'App\Http\Controllers\CarController@create')->name('cars.create');
 
 use App\Http\Controllers\CarController;
+Route::get('/cars/edit/{id}', [CarController::class, 'edit'])->name('cars.edit');
+Route::post('/cars/create', [CarController::class, 'create'])->name('cars.create');
+Route::delete('/cars/destroy/{id}', [CarController::class, 'destroy'])->name('cars.destroy');
 
-Route::get('/cars/edit/{id}', [CarController::class, 'edit']);
-Route::post('/cars/update', [CarController::class, 'update']);
+
 
 use App\Http\Controllers\CarCalendarController;
 

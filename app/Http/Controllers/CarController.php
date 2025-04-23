@@ -57,6 +57,11 @@ class CarController extends Controller
         return view('cars.displaygrid')->with('cars', $cars);    
     }
     
+    public function index()
+    {
+        $cars = Car::all();
+        return view('cars.index', compact('cars'));
+    }
    
 }
 
