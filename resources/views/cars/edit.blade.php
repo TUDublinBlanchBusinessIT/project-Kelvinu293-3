@@ -27,6 +27,21 @@
             <input type="number" class="form-control" name="year" value="{{ $car->year }}">
         </div>
 
+        <div class="mb-3">
+            <label>Fuel Type</label>
+            <input type="number" class="form-control" name="type" value="{{ $car->type }}">
+        </div>
+
+        <div class="mb-3">
+            <label>Transmissional</label>
+            <input type="text" class="form-control" name="transimissional" value="{{ $car->transmissional }}">
+        </div>
+
+        <div class="mb-3">
+            <label>Colour</label>
+            <input type="text" class="form-control" name="colour" value="{{ $car->colour }}">
+        </div>
+
         <button type="submit" class="btn btn-success">Update Car</button>
     </form>
 </div>
