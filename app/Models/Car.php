@@ -19,7 +19,8 @@ class Car extends Model
         'transmission',
         'colour',
     ];
-
+  
+    public $timestamps = false; 
 
 
 }
