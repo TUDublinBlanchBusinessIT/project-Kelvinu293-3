@@ -1,41 +1,25 @@
-<?php 
-namespace App\Models; 
-use Illuminate\Database\Eloquent\Model; 
+<?php
 
-class Car extends Model 
-{ 
-    public $table = "car"; // exact table name
-    public $timestamps = false;
+namespace App\Models;
 
-    public function setMake($make) 
-    { 
-        $this->attributes['make'] = $make;
-    } 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-    public function setModel($model) 
-    { 
-        $this->attributes['model'] = $model; 
-    } 
+class Car extends Model
+{
+    use HasFactory;
 
-    public function setYear($year) 
-    { 
-        $this->attributes['year'] = $year; 
-    } 
+    protected $table = 'cars'; // Explicitly specify the table name
 
-    public function setType($type) 
-    { 
-        $this->attributes['type'] = $type; 
-    } 
+    protected $fillable = [
+        'make',
+        'model',
+        'year',
+        'type',
+        'transmission',
+        'colour',
+    ];
 
-    public function setTransmission($transmission) 
-    { 
-        $this->attributes['transmission'] = $transmission; 
-    } 
-    
-    public function setColour($colour) 
-    { 
-        $this->attributes['colour'] = $colour; 
-    } 
 
 
 }

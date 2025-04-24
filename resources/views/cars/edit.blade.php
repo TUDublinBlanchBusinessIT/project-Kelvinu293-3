@@ -1,49 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Car</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<div class="container mt-5">
-    <h2>Edit Car</h2>
+@extends('layouts.app')
 
-    <form method="POST" action="/cars/update">
-        @csrf
-        <input type="hidden" name="id" value="{{ $car->id }}">
-
-        <div class="mb-3">
-            <label>Car Make</label>
-            <input type="text" class="form-control" name="make" value="{{ $car->make }}">
-        </div>
-
-        <div class="mb-3">
-            <label>Car Model</label>
-            <input type="text" class="form-control" name="model" value="{{ $car->model }}">
-        </div>
-
-        <div class="mb-3">
-            <label>Year</label>
-            <input type="number" class="form-control" name="year" value="{{ $car->year }}">
-        </div>
-
-        <div class="mb-3">
-            <label>Fuel Type</label>
-            <input type="number" class="form-control" name="type" value="{{ $car->type }}">
-        </div>
-
-        <div class="mb-3">
-            <label>Transmissional</label>
-            <input type="text" class="form-control" name="transimissional" value="{{ $car->transmissional }}">
-        </div>
-
-        <div class="mb-3">
-            <label>Colour</label>
-            <input type="text" class="form-control" name="colour" value="{{ $car->colour }}">
-        </div>
-
-        <button type="submit" class="btn btn-success">Update Car</button>
-    </form>
-</div>
-</body>
-</html>
+@section('content')
+<h1>Edit Car</h1>
+@if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<form action="{{ route('cars.update', $car->id) }}" method="POST">
+    @csrf
+    @method('PUT')
+    <label>Make:</label>
+    <input type="text" name="make" value="{{ old('make', $car->make) }}" required><br>
+    <label>Model:</label>
+    <input type="text" name="model" value="{{ old('model', $car->model) }}" required><br>
+    <label>Year:</label>
+    <input type="number" name="year" value="{{ old('year', $car->year) }}" required><br>
+    <label>Type:</label>
+    <input type="text" name="type" value="{{ old('type', $car->type) }}" required><br>
+    <label>Transmission:</label>
+    <input type="text" name="transmission" value="{{ old('transmission', $car->transmission) }}" required><br>
+    <label>Colour:</label>
+    <input type="text" name="colour" value="{{ old('colour', $car->colour) }}" required><br>
+    <button type="submit">Update Car</button>
+</form>
+<a href="{{ route('cars.index') }}">Back to Car List</a>
+@endsection
