@@ -3,10 +3,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Car extends Model
+class Mechanic extends Model
 {
     protected $fillable = [
-        'make', 'model', 'year', 'type', 'transmission', 'colour'
+        'name', 'email'
     ];
 
     public function bookings() {
