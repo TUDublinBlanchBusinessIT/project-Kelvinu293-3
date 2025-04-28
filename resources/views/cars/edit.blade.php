@@ -1,32 +1,14 @@
 @extends('layouts.app')
-
 @section('content')
-<h1>Edit Car</h1>
-@if ($errors->any())
-    <div>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+<h2>Edit Car</h2>
 <form action="{{ route('cars.update', $car->id) }}" method="POST">
-    @csrf
-    @method('PUT')
-    <label>Make:</label>
-    <input type="text" name="make" value="{{ old('make', $car->make) }}" required><br>
-    <label>Model:</label>
-    <input type="text" name="model" value="{{ old('model', $car->model) }}" required><br>
-    <label>Year:</label>
-    <input type="number" name="year" value="{{ old('year', $car->year) }}" required><br>
-    <label>Type:</label>
-    <input type="text" name="type" value="{{ old('type', $car->type) }}" required><br>
-    <label>Transmission:</label>
-    <input type="text" name="transmission" value="{{ old('transmission', $car->transmission) }}" required><br>
-    <label>Colour:</label>
-    <input type="text" name="colour" value="{{ old('colour', $car->colour) }}" required><br>
-    <button type="submit">Update Car</button>
+  @csrf @method('PUT')
+  <div class="mb-3"><label>Make</label><input name="make" class="form-control" value="{{ old('make', $car->make) }}" required></div>
+  <div class="mb-3"><label>Model</label><input name="model" class="form-control" value="{{ old('model', $car->model) }}" required></div>
+  <div class="mb-3"><label>Year</label><input name="year" type="number" class="form-control" value="{{ old('year', $car->year) }}" required></div>
+  <div class="mb-3"><label>Type</label><input name="type" class="form-control" value="{{ old('type', $car->type) }}"></div>
+  <div class="mb-3"><label>Transmission</label><input name="transmission" class="form-control" value="{{ old('transmission', $car->transmission) }}"></div>
+  <div class="mb-3"><label>Colour</label><input name="colour" class="form-control" value="{{ old('colour', $car->colour) }}"></div>
+  <button class="btn btn-warning">Update Car</button>
 </form>
-<a href="{{ route('cars.index') }}">Back to Car List</a>
 @endsection

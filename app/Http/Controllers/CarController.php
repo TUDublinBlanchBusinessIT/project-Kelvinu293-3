@@ -21,15 +21,16 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'make' => 'required|string',
-            'model' => 'required|string',
-            'year' => 'required|integer',
-            'type' => 'required|string',
-            'transmission' => 'required|string',
-            'colour' => 'required|string',
+            'make' => 'required|string|max:30',
+            'model' => 'required|string|max:30',
+            'year' => 'required|integer|min:1900|max:' . date('Y'),
+            'type' => 'nullable|string|max:30',
+            'transmission' => 'nullable|string|max:20',
+            'colour' => 'nullable|string|max:20',
         ]);
-        Car::create($validated);
-        return redirect()->route('cars.index')->with('success', 'Car created successfully!');
+        $car = Car::create($validated);
+        // Redirect straight to booking creation for this car
+        return redirect()->route('bookings.create', ['car_id' => $car->id]);
     }
 
     public function show(Car $car)
@@ -45,21 +46,20 @@ class CarController extends Controller
     public function update(Request $request, Car $car)
     {
         $validated = $request->validate([
-            'make' => 'required|string',
-            'model' => 'required|string',
-            'year' => 'required|integer',
-            'type' => 'required|string',
-            'transmission' => 'required|string',
-            'colour' => 'required|string',
+            'make' => 'required|string|max:30',
+            'model' => 'required|string|max:30',
+            'year' => 'required|integer|min:1900|max:' . date('Y'),
+            'type' => 'nullable|string|max:30',
+            'transmission' => 'nullable|string|max:20',
+            'colour' => 'nullable|string|max:20',
         ]);
         $car->update($validated);
-        return redirect()->route('cars.index')->with('success', 'Car updated successfully!');
+        return redirect()->route('cars.index')->with('success', 'Car updated!');
     }
 
     public function destroy(Car $car)
     {
         $car->delete();
-        return redirect()->route('cars.index')->with('success', 'Car deleted successfully!');
+        return redirect()->route('cars.index')->with('success', 'Car deleted!');
     }
 }
-?>

@@ -1,31 +1,15 @@
 @extends('layouts.app')
-
 @section('content')
-<h1>Add New Car</h1>
-@if ($errors->any())
-    <div>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+<h2>Add Car</h2>
 <form action="{{ route('cars.store') }}" method="POST">
-    @csrf
-    <label>Make:</label>
-    <input type="text" name="make" value="{{ old('make') }}" required><br>
-    <label>Model:</label>
-    <input type="text" name="model" value="{{ old('model') }}" required><br>
-    <label>Year:</label>
-    <input type="number" name="year" value="{{ old('year') }}" required><br>
-    <label>Type:</label>
-    <input type="text" name="type" value="{{ old('type') }}" required><br>
-    <label>Transmission:</label>
-    <input type="text" name="transmission" value="{{ old('transmission') }}" required><br>
-    <label>Colour:</label>
-    <input type="text" name="colour" value="{{ old('colour') }}" required><br>
-    <button type="submit">Add Car</button>
+  @csrf
+  <div class="mb-3"><label>Make</label><input name="make" class="form-control" required></div>
+  <div class="mb-3"><label>Model</label><input name="model" class="form-control" required></div>
+  <div class="mb-3"><label>Year</label><input name="year" type="number" class="form-control" required></div>
+  <div class="mb-3"><label>Type</label><input name="type" class="form-control"></div>
+  <div class="mb-3"><label>Transmission</label><input name="transmission" class="form-control"></div>
+  <div class="mb-3"><label>Colour</label><input name="colour" class="form-control"></div>
+  <button class="btn btn-primary">Add Car</button>
 </form>
-<a href="{{ route('cars.index') }}">Back to Car List</a>
 @endsection
+
