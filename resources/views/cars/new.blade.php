@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
 <h2>Add Car</h2>
 <form action="{{ route('cars.store') }}" method="POST">
@@ -12,4 +13,5 @@
   <button class="btn btn-primary">Add Car</button>
 </form>
 @endsection
+
 
