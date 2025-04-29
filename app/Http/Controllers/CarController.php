@@ -28,8 +28,9 @@ class CarController extends Controller
             'transmission' => 'nullable|string|max:20',
             'colour' => 'nullable|string|max:20',
         ]);
+
         $car = Car::create($validated);
-        // Redirect straight to booking creation for this car
+
         return redirect()->route('bookings.create', ['car_id' => $car->id]);
     }
 
@@ -53,13 +54,16 @@ class CarController extends Controller
             'transmission' => 'nullable|string|max:20',
             'colour' => 'nullable|string|max:20',
         ]);
+
         $car->update($validated);
-        return redirect()->route('cars.index')->with('success', 'Car updated!');
+
+        return redirect()->route('cars.index');
     }
 
     public function destroy(Car $car)
     {
         $car->delete();
-        return redirect()->route('cars.index')->with('success', 'Car deleted!');
+        return redirect()->route('cars.index');
     }
 }
+

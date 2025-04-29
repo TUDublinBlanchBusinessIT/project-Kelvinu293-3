@@ -1,11 +1,17 @@
 @extends('layouts.app')
+
 @section('content')
-<h2>Booking Details</h2>
-<ul class="list-group">
-  <li class="list-group-item"><strong>Car:</strong> {{ $booking->car->make }} {{ $booking->car->model }}</li>
-  <li class="list-group-item"><strong>Mechanic:</strong> {{ $booking->mechanic->name ?? 'N/A' }}</li>
-  <li class="list-group-item"><strong>Service Date:</strong> {{ $booking->service_date }}</li>
-  <li class="list-group-item"><strong>Notes:</strong> {{ $booking->notes }}</li>
-</ul>
-<a href="{{ route('bookings.index') }}" class="btn btn-secondary mt-2">Back</a>
+
+<h2>Mechanic Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ $mechanic->name }}</h5>
+        <p class="card-text">Email: {{ $mechanic->email }}</p>
+
+        <a href="{{ route('mechanics.edit', $mechanic->id) }}" class="btn btn-warning">Edit</a>
+        <a href="{{ route('mechanics.index') }}" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+
 @endsection

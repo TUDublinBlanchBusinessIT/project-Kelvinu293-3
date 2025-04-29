@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Mechanic;
@@ -19,12 +20,14 @@ class MechanicController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:50',
-            'email' => 'required|email|unique:mechanics,email'
+            'email' => 'required|email|max:100|unique:mechanics,email',
         ]);
-        Mechanic::create($request->all());
-        return redirect()->route('mechanics.index')->with('success', 'Mechanic added!');
+
+        Mechanic::create($validated);
+
+        return redirect()->route('mechanics.index')->with('success', 'Mechanic created successfully.');
     }
 
     public function show(Mechanic $mechanic)
@@ -39,19 +42,20 @@ class MechanicController extends Controller
 
     public function update(Request $request, Mechanic $mechanic)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:50',
-            'email' => 'required|email|unique:mechanics,email,' . $mechanic->id
+            'email' => 'required|email|max:100|unique:mechanics,email,' . $mechanic->id,
         ]);
-        $mechanic->update($request->all());
-        return redirect()->route('mechanics.index')->with('success', 'Mechanic updated!');
+
+        $mechanic->update($validated);
+
+        return redirect()->route('mechanics.index')->with('success', 'Mechanic updated successfully.');
     }
 
     public function destroy(Mechanic $mechanic)
     {
         $mechanic->delete();
-        return redirect()->route('mechanics.index')->with('success', 'Mechanic deleted!');
+
+        return redirect()->route('mechanics.index')->with('success', 'Mechanic deleted successfully.');
     }
 }
-
-
