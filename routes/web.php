@@ -7,3 +7,7 @@ use App\Http\Controllers\MechanicController;
 Route::resource('cars', CarController::class);
 Route::resource('bookings', BookingController::class);
 Route::resource('mechanics', MechanicController::class);
+
+Route::get('/', function () {
+    return view('welcome');
+});
