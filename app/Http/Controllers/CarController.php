@@ -62,8 +62,12 @@ class CarController extends Controller
 
     public function destroy(Car $car)
     {
+        if ($car->bookings()->exists()){
+            return redirect()->route('cars.index')->with('error', 'Cannot delete car because it has bookings.');
+        }
         $car->delete();
-        return redirect()->route('cars.index');
+        return redirect()->route('cars.index')->with('success', 'Car deleted successfully.');
     }
+
 }
 

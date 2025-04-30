@@ -11,3 +11,14 @@ Route::resource('mechanics', MechanicController::class);
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Models\Car;
+use App\Models\Mechanic;
+use App\Models\Booking;
+
+Route::get('/', function () {
+    $carsCount = Car::count();
+    $mechanicsCount = Mechanic::count();
+    $bookingsCount = Booking::count();
+    return view('welcome', compact('carsCount', 'mechanicsCount', 'bookingsCount'));
+});
