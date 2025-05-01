@@ -14,6 +14,12 @@ class Mechanic extends Model
     {
         return $this->hasMany(Booking::class);
     }
+    
+    public function serviceRecords()
+    {
+        return $this->hasMany(ServiceRecord::class);
+    }
+
 }
 
 

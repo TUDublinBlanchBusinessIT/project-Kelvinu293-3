@@ -22,3 +22,6 @@ Route::get('/', function () {
     $bookingsCount = Booking::count();
     return view('welcome', compact('carsCount', 'mechanicsCount', 'bookingsCount'));
 });
+
+Route::view('/reports', 'reports')->name('reports');
+

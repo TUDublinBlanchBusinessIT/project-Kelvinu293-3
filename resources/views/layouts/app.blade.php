@@ -80,6 +80,12 @@
                         <i class="bi bi-calendar-event"></i> Bookings
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('reports') ? 'active' : '' }}" href="{{ route('reports') }}">
+                        <i class="bi bi-clipboard-data"></i> Reports
+                     </a>
+                    </li>
             </ul>
 
             <button onclick="toggleDarkMode()" class="btn btn-sm btn-toggle-mode">
