@@ -40,11 +40,6 @@
 <!-- About Us Section -->
 <div class="bg-light rounded p-5 mt-5 shadow-sm">
     <div class="row align-items-center">
-        <div class="col-md-6 mb-4 mb-md-0">
-            <img src="https://cdn.pixabay.com/photo/2015/03/26/09/54/car-repair-690038_960_720.jpg"
-                 class="img-fluid rounded shadow"
-                 alt="About Car Service">
-        </div>
         <div class="col-md-6">
             <h2 class="text-primary">About Car Service Center</h2>
             <p class="text-muted">
